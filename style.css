@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 3s; /* Smooth transition for background color change */
+}
+
+header, nav, footer {
+    background-color: rgba(0,0,0,0.8); /* Semi-transparent to show color changes */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+nav {
+    padding: 10px 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+section {
+    padding: 20px;
+    background-color: rgba(255,255,255,0.8); /* Lightly transparent */
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    object-fit: cover;
+}

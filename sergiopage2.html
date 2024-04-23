@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             background-color: #f8f8f8;
+            transition: background-color 3s; /* Smooth transition for background color change */
         }
         header {
             background-color: #333;
@@ -37,6 +38,10 @@
             bottom: 0;
             width: 100%;
         }
+        video {
+            position: absolute;
+            z-index: 1000; /* Ensure videos are above other elements */
+        }
     </style>
 </head>
 <body>
@@ -51,32 +56,64 @@
     </nav>
 
     <section id="video">
-
-        <video width="640" height="360" controls>
+        <video width="640" height="360" id="video1" controls>
             <source src="intro.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </section>
     <section id="video1">
-
-        <video width="640" height="360" controls>
+        <video width="640" height="360" id="video2" controls>
             <source src="fukcda.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </section>
     <section id="about">
         <h2>About</h2>
-        <p>sergio is 17 year old dick sucker who loves Mr.smiths dirty asshole</p>
+        <p>sergio  </p>
         <p>yoo <a href="onlyfans.html">Checkout my spicy content</a> lool.</p>
     </section>
 
     <section id="onlyfans">
         <h2>onlyfans</h2>
-        <p>Man who doesn't love to spread this asshole like me? so why don't you click the link to my onlyfans page and see some spicy contents</p>
+        <p></p>
     </section>
 
     <footer>
         <p>&copy; 2024 Sergios Gayness. All rights reserved.</p>
     </footer>
+
+    <script>
+        window.onload = function() {
+            const videos = document.querySelectorAll('video');
+
+            // Function to animate videos
+            function animateVideos() {
+                videos.forEach(video => {
+                    let x = Math.random() * (window.innerWidth - video.offsetWidth);
+                    let y = Math.random() * (window.innerHeight - video.offsetHeight);
+                    video.style.left = x + 'px';
+                    video.style.top = y + 'px';
+                });
+            }
+
+            // Function to change background color
+            function changeBackgroundColor() {
+                const colors = ['#ff7f7f', '#7fccff', '#7fff7f', '#ff7fff', '#ffff7f'];
+                let currentColorIndex = 0;
+                setInterval(() => {
+                    document.body.style.backgroundColor = colors[currentColorIndex];
+                    currentColorIndex++;
+                    if (currentColorIndex >= colors.length) currentColorIndex = 0;
+                }, 4000);
+            }
+
+            // Trigger animation on load and at intervals
+            animateVideos();
+            setInterval(animateVideos, 5000); // Change video positions every 5 seconds
+
+            // Change background color
+            changeBackgroundColor();
+        };
+    </script>
 </body>
 </html>
